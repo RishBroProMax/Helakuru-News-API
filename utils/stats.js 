@@ -1,0 +1,24 @@
+let startTime = Date.now();
+let totalRequests = 0;
+
+function logRequest() {
+    totalRequests++;
+}
+
+function getUptime() {
+    const currentTime = Date.now();
+    const uptimeInSeconds = Math.floor((currentTime - startTime) / 1000);
+    return uptimeInSeconds;
+}
+
+function getStats() {
+    return {
+        uptime: getUptime(),
+        totalRequests: totalRequests,
+    };
+}
+
+module.exports = {
+    logRequest,
+    getStats,
+};

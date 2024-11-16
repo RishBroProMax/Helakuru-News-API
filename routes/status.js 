@@ -1,0 +1,11 @@
+const express = require('express');
+const stats = require('../utils/stats');
+const router = express.Router();
+
+// Endpoint for the dashboard (API Stats)
+router.get('/', (req, res) => {
+    const statsData = stats.getStats();
+    res.render('dashboard', { stats: statsData });
+});
+
+module.exports = router;
