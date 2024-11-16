@@ -1,6 +1,15 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 const config = require('../config/config');
+const stats = require('./stats');
+
+
+async function fetchLatestNews() {
+    stats.logRequest(); // Log every request
+
+    // Fetch news logic here...
+    return newsData;
+}
 
 async function fetchLatestNews() {
     console.log('🔍 Fetching the latest news...');
